@@ -106,7 +106,7 @@ int main()
         }
         else
         {
-            cout<<"Maze "<<mazeCount<<": No Solution found"<<endl;
+            cout<<"Maze "<<mazeCount<<": No solution"<<endl;
             aMaze.printMaze( vecPath, solution );
             mazeCount++;
             cout<<endl;
