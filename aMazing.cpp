@@ -43,6 +43,7 @@ int main()
         {
             getline( cin , input2 );
             vector<string> vecOfRow2 = split( input2 , delimiter );
+            
             aMaze.setMazeRow( vecOfRow2, i);
         }
         getline( cin , input ); //  gets emty line
@@ -59,7 +60,7 @@ int main()
             path.pop();
             
             while( current.canTurn() )
-            {
+            {   
                 Location step = current.Go();
                 
                 Cell stepCell = aMaze.getCell( step.getRow(), step.getCol() );
@@ -68,6 +69,7 @@ int main()
                 {
                     path.push( step );
                     solution = true;
+                    break;
                 }
                 else if( !stepCell.getIsWall() && !stepCell.getBeenVisited() && step.inBounds( 0, 9, 0, 9 ) )
                 {
@@ -99,12 +101,14 @@ int main()
             cout<<"Maze "<<mazeCount<<": Solution found"<<endl;
             aMaze.printMaze( vecPath, solution );
             mazeCount++;
+            cout<<endl;
         }
         else
         {
-            cout<<"Maze "<<mazeCount<<": Solution found"<<endl;
+            cout<<"Maze "<<mazeCount<<": No Solution found"<<endl;
             aMaze.printMaze( vecPath, solution );
             mazeCount++;
+            cout<<endl;
         }
     }
     

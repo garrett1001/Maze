@@ -5,28 +5,28 @@
 
 using namespace std;
 
-void Maze::setMazeRow( vector<string> input, int row)
+void Maze::setMazeRow( vector<string> input, int row )
 {
     for(int col = 0; col < 10; col++)
     {
         Cell aCell;
         
-        if( input[row][col] == 'S' )
+        if( input[col] == "S" )
         {
             start.set( row, col );
             aCell.setVisited(true);
             maze[row][col] = aCell;
         }
-        else if( input[row][col] == 'G' )
+        else if( input[col] == "G" )
         {
             goal.set( row, col );
             maze[row][col] = aCell;
         }
-        else if( input[row][col] == '0' )
+        else if( input[col] == "0" )
         {
             maze[row][col] = aCell;
         }
-        else if( input[row][col] == '1' )
+        else if( input[col] == "1" )
         {
             aCell.setIsWall(true);
             maze[row][col] = aCell;
@@ -79,7 +79,6 @@ void Maze::printMaze( vector<Location> path, bool solution)
             {
                 pMaze[i][j] = '0';
             }
-            
         }
     }
     
