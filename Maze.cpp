@@ -84,7 +84,7 @@ void Maze::printMaze( vector<Location> path, bool solution)
     
     if( solution )
     {
-        for( int i = 0; i < 10; i++ )
+        for( int i = 0; i < path.size(); i++ )
         {
             pMaze[path[i].getRow()][path[i].getCol()] = '*';
         }

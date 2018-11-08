@@ -67,6 +67,7 @@ int main()
                 
                 if( aMaze.isGoal( step ) )
                 {
+                    path.push( current );
                     path.push( step );
                     solution = true;
                     break;
@@ -87,7 +88,7 @@ int main()
                     current.Turn();
                 }
             }
-        }
+        }        
         
         vector<Location> vecPath;  // puts path into vector
         while(!path.empty())
